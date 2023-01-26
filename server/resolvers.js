@@ -2,6 +2,12 @@ import { Company, Job } from "./db.js";
 
 export const resolvers = {
   Query: {
+    job: (_root, args) => {
+      // the root here is similar to the below function that receives the parent object.
+      // the 2nd param is the arguments that we receive from the url
+      //console.log('args: ', args); //logs an object with id on server
+      return Job.findById(args.id);
+    },
     jobs: () => Job.findAll()
   },
 

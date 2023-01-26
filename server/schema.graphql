@@ -1,5 +1,6 @@
 type Query {
-  jobs: [Job!]
+  job(id: ID!): Job # single job
+  jobs: [Job!] # an array of jobs
 }
 
 type Company {
